@@ -1,0 +1,32 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white">PRODUCT LIST</a>
+    <form class="d-flex">
+      <button class="btn  btn-warning" type="submit" (click)="addProduct()">ADD PRODUCT</button>
+    </form>
+  </div>
+</nav>
+
+<table class="table table-dark table-striped">
+  <thead>
+      <tr>
+        <th scope="col">Product Id</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Category</th>
+        <th scope="col">Price</th>
+        <th scope="col">StockUnits</th>
+        <th scope="col">Action</th>
+
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor= "let product of products ; index as i" >
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.category}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.Stock_units}}</td>
+          <td><button class="btn" routerLink='/ProductDetails/{{ i }}' >View Details</button></td>
+      </tr>
+  </tbody>
+</table>
